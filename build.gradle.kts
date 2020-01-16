@@ -34,3 +34,8 @@ application {
   // Define the main class for the application.
   mainClassName = "eu.maksimov.artstore.AppKt"
 }
+
+tasks.wrapper {
+  gradleVersion = "6.1"
+  distributionType = Wrapper.DistributionType.ALL
+}
