@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   id("org.jetbrains.kotlin.jvm") version "1.3.41"
+  id("org.springframework.boot") version "2.2.2.RELEASE"
+  id("io.spring.dependency-management") version "1.0.8.RELEASE"
 }
 
 repositories {
@@ -10,6 +12,7 @@ repositories {
 
 dependencies {
   implementation(kotlin("stdlib-jdk8"))
+  implementation("org.springframework.boot:spring-boot-starter")
 }
 
 tasks.withType<KotlinCompile> {
