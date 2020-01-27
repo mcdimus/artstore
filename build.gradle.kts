@@ -25,6 +25,7 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
   testImplementation("org.assertj:assertj-core:3.11.1")
   testImplementation("org.mockito:mockito-core:3.2.4")
+  testImplementation("org.mockito:mockito-junit-jupiter:3.2.4")
   testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 

@@ -3,7 +3,7 @@ package eu.maksimov.artstore.dao
 import eu.maksimov.artstore.model.Art
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
-import java.time.LocalDateTime
+import java.time.Instant
 import java.util.*
 
 class ArtRepositoryTest {
@@ -21,7 +21,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     // when
@@ -43,7 +43,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -72,7 +72,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -106,7 +106,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>()
@@ -131,7 +131,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -159,7 +159,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -202,7 +202,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
     val art2 = Art(
         id = artId1,
@@ -210,7 +210,7 @@ class ArtRepositoryTest {
         author = "John Doe",
         price = 111.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -241,7 +241,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
     val art2 = Art(
         id = artId1,
@@ -249,7 +249,7 @@ class ArtRepositoryTest {
         author = "John Doe",
         price = 111.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(
@@ -278,7 +278,7 @@ class ArtRepositoryTest {
         author = "John Smith",
         price = 100.0,
         content = "",
-        created = LocalDateTime.now()
+        created = Instant.now()
     )
 
     val arts = mutableMapOf<UUID, Art>(

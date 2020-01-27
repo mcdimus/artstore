@@ -1,6 +1,6 @@
 package eu.maksimov.artstore.model
 
-import java.time.LocalDateTime
+import java.time.Instant
 import java.util.*
 
 data class Art(
@@ -9,5 +9,5 @@ data class Art(
     val author: String,
     val price: Double,
     val content: String,
-    val created: LocalDateTime
+    val created: Instant
 )
