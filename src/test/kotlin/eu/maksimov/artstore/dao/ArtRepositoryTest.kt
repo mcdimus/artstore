@@ -1,6 +1,7 @@
 package eu.maksimov.artstore.dao
 
 import eu.maksimov.artstore.model.Art
+import eu.maksimov.artstore.model.ArtType
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.time.Instant
@@ -17,6 +18,7 @@ class ArtRepositoryTest {
     val newArtId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val newArt = Art(
         id = newArtId,
+        type = ArtType.FULL_RANDOM,
         name = "New Art 1",
         author = "John Smith",
         price = 100.0,
@@ -39,6 +41,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -68,6 +71,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -87,6 +91,7 @@ class ArtRepositoryTest {
     assertThat(arts).containsOnly(
         entry(artId, Art(
             id = artId,
+            type = ArtType.FULL_RANDOM,
             name = "Updated Art",
             author = "John Smith",
             price = 200.0,
@@ -102,6 +107,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -127,6 +133,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -155,6 +162,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -198,6 +206,7 @@ class ArtRepositoryTest {
     val artId2 = UUID.fromString("d4cb620d-9f68-4f92-987f-5ba119f27bdf")
     val art1 = Art(
         id = artId1,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -206,6 +215,7 @@ class ArtRepositoryTest {
     )
     val art2 = Art(
         id = artId1,
+        type = ArtType.FULL_RANDOM,
         name = "Art 2",
         author = "John Doe",
         price = 111.0,
@@ -237,6 +247,7 @@ class ArtRepositoryTest {
     val artId2 = UUID.fromString("d4cb620d-9f68-4f92-987f-5ba119f27bdf")
     val art1 = Art(
         id = artId1,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,
@@ -245,6 +256,7 @@ class ArtRepositoryTest {
     )
     val art2 = Art(
         id = artId1,
+        type = ArtType.FULL_RANDOM,
         name = "Art 2",
         author = "John Doe",
         price = 111.0,
@@ -274,6 +286,7 @@ class ArtRepositoryTest {
     val artId = UUID.fromString("a7c7a9f3-f91e-49dd-9a52-61ca282cecdc")
     val art = Art(
         id = artId,
+        type = ArtType.FULL_RANDOM,
         name = "Art 1",
         author = "John Smith",
         price = 100.0,

@@ -1,44 +1,57 @@
 package eu.maksimov.artstore.service
 
 import com.nhaarman.mockitokotlin2.argWhere
+import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
 import eu.maksimov.artstore.dao.ArtRepository
+import eu.maksimov.artstore.model.ArtType
+import eu.maksimov.artstore.model.ArtType.FULL_RANDOM
 import eu.maksimov.artstore.service.ArtService.Companion.DEFAULT_SIZE
+import eu.maksimov.artstore.service.generator.ArtGeneratorFactory
+import eu.maksimov.artstore.service.generator.FullRandomArtGenerator
 import org.assertj.core.api.SoftAssertions.assertSoftly
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.InjectMocks
-import org.mockito.Mock
-import org.mockito.Spy
 import org.mockito.junit.jupiter.MockitoExtension
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
-import java.util.*
+import java.util.Base64
 
 @ExtendWith(MockitoExtension::class)
 class ArtServiceTest {
 
   private val NOW = Instant.parse("2020-01-27T17:45:33Z")
 
-  @Mock
-  private lateinit var artGenerator: ArtGenerator
-  @Mock
+  private lateinit var artGeneratorFactory: ArtGeneratorFactory
+  private lateinit var artGenerator: FullRandomArtGenerator
   private lateinit var repository: ArtRepository
-  @Spy
-  private val clock: Clock = Clock.fixed(NOW, ZoneId.systemDefault())
 
-  @InjectMocks
   private lateinit var artService: ArtService
 
+  @BeforeEach
+  fun setUp() {
+    artGeneratorFactory = mock()
+    artGenerator = mock()
+    repository = mock()
+    artService = ArtService(
+        artGeneratorFactory,
+        repository,
+        Clock.fixed(NOW, ZoneId.systemDefault())
+    )
+  }
+
   @Test
-  fun `creates new art and store it in repository`() {
+  fun `creates new art and stores it in repository`() {
     // given
+    whenever(artGeneratorFactory.get(FULL_RANDOM)).thenReturn(artGenerator)
     whenever(artGenerator.generate(DEFAULT_SIZE)).thenReturn(ByteArray(10) { it.toByte() })
 
     // when
-    val result = artService.create("The Art", "John Smith", 200.0)
+    val result = artService.create(ArtType.FULL_RANDOM, "The Art", "John Smith", 200.0)
 
     // then
     assertSoftly {
@@ -54,6 +67,7 @@ class ArtServiceTest {
     }
 
     verify(repository).add(argWhere { it.name == "The Art" })
+    verifyNoMoreInteractions(repository)
   }
 
 }

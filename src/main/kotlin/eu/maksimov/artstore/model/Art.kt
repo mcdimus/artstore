@@ -5,6 +5,7 @@ import java.util.*
 
 data class Art(
     val id: UUID = UUID.randomUUID(),
+    val type: ArtType,
     val name: String,
     val author: String,
     val price: Double,
