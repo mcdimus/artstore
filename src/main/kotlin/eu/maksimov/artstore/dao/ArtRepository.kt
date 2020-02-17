@@ -2,7 +2,7 @@ package eu.maksimov.artstore.dao
 
 import eu.maksimov.artstore.model.Art
 import org.springframework.stereotype.Repository
-import java.util.*
+import java.util.UUID
 
 @Repository
 class ArtRepository(

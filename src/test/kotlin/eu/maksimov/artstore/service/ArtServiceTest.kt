@@ -14,14 +14,11 @@ import eu.maksimov.artstore.service.generator.FullRandomArtGenerator
 import org.assertj.core.api.SoftAssertions.assertSoftly
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.junit.jupiter.MockitoExtension
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
 import java.util.Base64
 
-@ExtendWith(MockitoExtension::class)
 class ArtServiceTest {
 
   private val NOW = Instant.parse("2020-01-27T17:45:33Z")

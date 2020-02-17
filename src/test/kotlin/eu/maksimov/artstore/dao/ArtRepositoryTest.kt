@@ -2,10 +2,12 @@ package eu.maksimov.artstore.dao
 
 import eu.maksimov.artstore.model.Art
 import eu.maksimov.artstore.model.ArtType
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.catchThrowable
+import org.assertj.core.api.Assertions.entry
 import org.junit.jupiter.api.Test
 import java.time.Instant
-import java.util.*
+import java.util.UUID
 
 class ArtRepositoryTest {
 

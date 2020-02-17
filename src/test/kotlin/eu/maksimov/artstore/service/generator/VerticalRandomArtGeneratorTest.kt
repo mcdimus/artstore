@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.data.Offset
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayInputStream
-import java.util.*
 import javax.imageio.ImageIO
 
 class VerticalRandomArtGeneratorTest {

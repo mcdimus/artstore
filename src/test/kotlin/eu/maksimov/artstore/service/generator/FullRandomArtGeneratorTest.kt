@@ -1,7 +1,7 @@
 package eu.maksimov.artstore.service.generator
 
 import org.assertj.core.api.Assertions.assertThat
-import org.assertj.core.data.Offset.*
+import org.assertj.core.data.Offset.offset
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayInputStream
 import javax.imageio.ImageIO

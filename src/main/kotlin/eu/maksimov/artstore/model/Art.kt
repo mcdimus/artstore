@@ -1,7 +1,7 @@
 package eu.maksimov.artstore.model
 
 import java.time.Instant
-import java.util.*
+import java.util.UUID
 
 data class Art(
     val id: UUID = UUID.randomUUID(),
